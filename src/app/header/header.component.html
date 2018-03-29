@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <header>
+    <h1>Yay! we made a header</h1>
+  </header>
+  <select class="mb-3">
+    <option *ngFor="let i of months">{{i}}</option>
+  </select>
+
+  <app-card-list [cards]="cards">
+  </app-card-list>
+</div>

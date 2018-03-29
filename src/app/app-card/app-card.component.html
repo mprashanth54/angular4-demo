@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">{{userKey || text}}
+      <button type="button" class="align-right close justify-content-end" aria-label="Close" (click)="deleteCard(number)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </h5>
+  </div>
+  <div class="card-body">
+    <div class="card-block">
+      <p class="card-text">{{number}}</p>
+      <input placeholder="Take a note..." class="form-control text-center" [value]="userKey" (input)="userKey = $event.target.value">
+      <!--banana in a box -->
+      <input placeholder="Take a note..." class="form-control text-center" [(ngModel)]="userKey">
+    </div>
+  </div>
+</div>
