@@ -9,5 +9,15 @@
     </h1>
   </div>
 </div>
-
-<app-header [cards]="cards"></app-header>
+<app-table [cards]="cards"></app-table>
+<app-card-list [cards]="cards"></app-card-list>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <app-form></app-form>
+    </div>
+    <div class="col-6">
+      <app-form-validation></app-form-validation>
+    </div>
+  </div>
+</div>

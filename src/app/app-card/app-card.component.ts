@@ -18,7 +18,7 @@ export class AppCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.text, this.number)
+    console.log(this.text, typeof (this.number))
   }
 
   onClick(event) {

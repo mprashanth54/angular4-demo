@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Card } from './models/card'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  cards: Array<any> = [
+  cards: Array<Card> = [
     { text: 'Card 1', number: 1 },
     { text: 'Card 2', number: 2 },
     { text: 'Card 3', number: 3 },

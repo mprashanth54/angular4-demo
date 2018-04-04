@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-4 pb-3" *ngFor="let card of cards">
-      <app-card class="pb-3" text={{card.text}} number={{card.number}} (onCardDelete)="deleteCard($event)"></app-card>
+      <app-card class="pb-3" text={{card.text}} [number]=card.number (onCardDelete)="deleteCard($event)"></app-card>
     </div>
   </div>
 </div>
