@@ -1,16 +1,19 @@
 <div>
   <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata)">
-    <input type="text" class="form-control" name="emailid" placeholder="emailid" formControlName="emailid">
+    <input type="text" class="form-control" [ngClass]="{
+      'is-valid': (formdata.controls.emailid.valid && formdata.controls.emailid.touched),
+      'is-invalid': (formdata.controls.emailid.touched && formdata.controls.emailid.invalid)
+    }" name="emailid" placeholder="Email..." formControlName="emailid">
     <br/>
     <input type="password" class="form-control" [ngClass]="{
       'is-valid': (formdata.controls.passwd.valid && formdata.controls.passwd.touched),
       'is-invalid': (formdata.controls.passwd.touched && formdata.controls.passwd.invalid)
-    }" name="passwd" placeholder="passwd" formControlName="passwd">
+    }" name="passwd" placeholder="Password..." formControlName="passwd">
     <br/>
-    <input type="submit" [disabled]="!formdata.valid" class="form-control" value="Log In">
+    <input type="submit" [disabled]="!formdata.valid" class="form-control text-left" value="Log In">
   </form>
 </div>
 
-<p>
-  Email entered is : {{emailid}}
-</p>
+<pre>
+  {{formdata.value | json}}
+</pre>

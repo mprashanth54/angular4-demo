@@ -13,7 +13,6 @@ export class FormComponent implements OnInit {
   ngOnInit() {
   }
 
-
   Register(regForm: NgForm) {
     // ng - touched: Controls have been visited
     // ng - untouched: controls have not been visited
@@ -22,7 +21,6 @@ export class FormComponent implements OnInit {
     // ng - valid : control values are valid
     // ng - invalid : control values are invalid
     console.log(regForm);
-
   }
 
 }
