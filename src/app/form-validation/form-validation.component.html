@@ -1,19 +1,37 @@
-<div>
-  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata)">
-    <input type="text" class="form-control" [ngClass]="{
+<div class="container">
+  <div class="row">
+    <div class="form_bg">
+      <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata)">
+        <input type="text" class="form-control" [ngClass]="{
       'is-valid': (formdata.controls.emailid.valid && formdata.controls.emailid.touched),
       'is-invalid': (formdata.controls.emailid.touched && formdata.controls.emailid.invalid)
     }" name="emailid" placeholder="Email..." formControlName="emailid">
-    <br/>
-    <input type="password" class="form-control" [ngClass]="{
+        <br/>
+        <input type="password" class="form-control" [ngClass]="{
       'is-valid': (formdata.controls.passwd.valid && formdata.controls.passwd.touched),
       'is-invalid': (formdata.controls.passwd.touched && formdata.controls.passwd.invalid)
     }" name="passwd" placeholder="Password..." formControlName="passwd">
-    <br/>
-    <input type="submit" [disabled]="!formdata.valid" class="form-control text-left" value="Log In">
-  </form>
+        <br/>
+        <div class="form-group radio">
+          <h4>Super power:</h4>
+          <label class="center-block">
+            <input type="radio" formControlName="power" value="flight">Flight</label>
+          <label class="center-block">
+            <input type="radio" formControlName="power" value="x-ray vision">X-ray vision</label>
+          <label class="center-block">
+            <input type="radio" formControlName="power" value="strength">Strength</label>
+        </div>
+        <div *ngFor="let option of formdata.controls['options'].controls; let i = index">
+          <label>
+            <input type="checkbox" name="options" value={{option}} [formControl]="option" /> {{values[i].name}}
+          </label>
+        </div>
+        <input type="submit" [disabled]="!formdata.valid" class="form-control text-left" value="Log In">
+      </form>
+    </div>
+  </div>
+  <pre>
+    {{formdata.value | json}}
+    {{options | json}}
+  </pre>
 </div>
-
-<pre>
-  {{formdata.value | json}}
-</pre>

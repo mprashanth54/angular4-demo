@@ -10,6 +10,8 @@ import { FormComponent } from './form/form.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { TableComponent } from './table/table.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ParameterRouteComponent } from './parameter-route/parameter-route.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     CardListComponent,
     FormComponent,
     FormValidationComponent,
-    TableComponent
+    TableComponent,
+    ParameterRouteComponent,
+    NotFoundComponent
   ],
   imports: [
     AppRoutingModule,
